@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8" />
+		<style type="text/css">
+			html,body{
+				background-color:#00ffff;
+				width: 100%;
+				height: 100%;
+			}
+			#flex-container{
+				
+				display:flex;
+				width: 100%;
+				height: 100%;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+			.titletext{
+				font-size: 80px;
+				color:black;
+				text-align: center;
+				height: 70px;
+				
+				
+			}
+			.image{
+				width:35%;
+				
+				margin-top: 80px;
+				
+				
+				
+			}
+			@keyframes star{
+				0%{opacity:0}
+			    50%{opacity:1}
+			    100%{opacity:0}
+			}
+			.text{
+				font-size: 30px;
+				color: black;
+				flex-wrap: wrap;
+			}
+		</style>
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+			    	  //调用星动画
+			    createStar()
+			}
+			      //创建星
+			function createStar(){
+			    var offsetWidth = document.body.offsetWidth;
+			    var offsetHeight = document.body.offsetHeight;
+			    	  
+			    	  //创建星，并设置相应样式
+			    var star = document.createElement("img");
+			    star.src = "https://shengnuiaman.github.io/img/star2.png";
+			    star.style.position = "absolute";
+			    star.style.left = (Math.random()*offsetWidth)+"px";
+			    star.style.top = (Math.random()*offsetHeight)+"px";
+			    star.style.opacity = 0;
+			    star.style.animation = "star 1s ease";//给星添加animation动画
+			    	  
+			    	  //动画完成，将星从body中删除
+			    star.addEventListener("animationend",function(){
+			         document.body.removeChild(this);
+			    });
+			    	  
+			    	  //将星添加给body
+			    document.body.appendChild(star);
+			    	  
+			    window.setTimeout("createStar()",100);
+			}
+			function init(){
+				document.getElementById("ti").style.color="orange";
+			}
+			function init1(){
+				document.getElementById("to").style.color="blue";
+			}
+		</script>
+	</head>
+	<body>
+		<div class="titletext" id="to">
+			快船队
+		</div>
+		<div id="flex-container">
+			
+			
+				<a href="https://majunhangbaobao.github.io/llll333/" class="image" ><img src="https://ts1.cn.mm.bing.net/th/id/R-C.59002007cf924d0d12dc26df43e1ad57?rik=AX9NGpg1b5RNwA&riu=http%3a%2f%2fimg1.gtimg.com%2fsports%2fpics%2fhv1%2f75%2f183%2f1932%2f125675040.png&ehk=jPgAK%2fhwmZcg24tCAbYvohC0GpYKNIX134KD5azDxlo%3d&risl=&pid=ImgRaw&r=0" /></a>
+			<div id="ti" class="text" >
+				洛杉矶快船队（Los Angeles Clippers），是一支位于美国加利福尼亚州洛杉矶的职业篮球队，于1970年成立并加入美国职业篮球联赛（NBA），现为西部联盟太平洋赛区参赛球队。
+				快船队搬迁过多次，1970年初入NBA称为布法罗勇士队，1977-78赛季，勇敢者队搬到圣地亚哥，很快改名为快艇队。从1976-77赛季开始，快船队连续16个赛季未能进入季后赛。1981年球队易主，斯特林成为球队老板，在1984年将球队搬到洛杉矶。2021年6月19日历史首次闯入西部决赛。
+				快船队在2009年选中的状元秀布雷克·格里芬，成为球队未来的基石与希望。2011年休赛期随着克里斯·保罗的加盟，洛杉矶快船队正式迈入NBA联盟强队行列
+			<input type="button" value="更换字体颜色" style="width:100%;height:50px" onclick="init()"/>
+			<input type="button" value="更换标题颜色" style="width:100%;height:50px" onclick="init1()"/
+		</div>
+		
+	</body>
+</html>
